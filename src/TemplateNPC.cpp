@@ -144,14 +144,14 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                 }
                 break;
             case CLASS_ROGUE:
-                if ((*itr)->playerSpec == "Subtlety")
+                /*if ((*itr)->playerSpec == "Subtlety")
                 {
                     player->learnSpellHighRank(16511); // hemorrhage
                     player->learnSpellHighRank(14185); // preparation
                     player->learnSpellHighRank(14183); // premeditation
                     player->learnSpellHighRank(36554); // shadowstep
                     player->learnSpellHighRank(51713); // shadow dance
-                }
+                }*/
                 if ((*itr)->playerSpec == "Combat")
                 {
                     player->learnSpellHighRank(13750); // adrenaline rush
@@ -901,11 +901,11 @@ public:
         case CLASS_ROGUE:
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_rogue_eviscerate:30|t|r Use Assasination Spec", GOSSIP_SENDER_MAIN, 24);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_backstab:30|t|r Use Combat Spec", GOSSIP_SENDER_MAIN, 25);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_stealth:30|t|r Use Subtlety Spec", GOSSIP_SENDER_MAIN, 26);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_stealth:30|t|r Use Subtlety Spec", GOSSIP_SENDER_MAIN, 26);*/
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_rogue_eviscerate:30|t|r Use Assasination Spec (Talents Only)", GOSSIP_SENDER_MAIN, 124);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_backstab:30|t|r Use Combat Spec (Talents Only)", GOSSIP_SENDER_MAIN, 125);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_stealth:30|t|r Use Subtlety Spec (Talents Only)", GOSSIP_SENDER_MAIN, 126);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_stealth:30|t|r Use Subtlety Spec (Talents Only)", GOSSIP_SENDER_MAIN, 126);*/
             /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\Trade_Engineering:30|t|r Reset Talents", GOSSIP_SENDER_MAIN, 31);*/
             break;
@@ -1206,8 +1206,8 @@ public:
             break;
 
         case 26: // Use Subtlety Rogue Spec
-            sTemplateNpcMgr->sTalentsSpec = "Subtlety";
-            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Subtlety";
+            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
@@ -1434,8 +1434,8 @@ public:
             break;
 
         case 126:
-            sTemplateNpcMgr->sTalentsSpec = "Subtlety";
-            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Subtlety";
+            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
