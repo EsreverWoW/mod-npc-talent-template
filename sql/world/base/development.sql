@@ -1,8 +1,8 @@
 -- DATA
 SET
 @NpcEntry 		:= 55009,
-@NpcName		:= "Pick a spec",
-@NpcSubname		:= "AzerothCore Template",
+@NpcName		:= "Specialization Master",
+@NpcSubname		:= "Templates",
 @NpcDisplayID		:= 24877;
 
 DELETE FROM `creature_template` WHERE `entry` IN (@NpcEntry);
@@ -11,7 +11,7 @@ INSERT INTO `creature_template` (`entry`, `modelid1`, `name`, `subname`, `IconNa
 
 DELETE FROM `npc_text` WHERE `ID` = @NpcEntry;
 INSERT INTO `npc_text` (`ID`, `text0_0`, `text0_1`) VALUES
-(@NpcEntry, 'Here you can select a character template which will gear up, gem up, set talent specialization, and set glyphs for your character instantly.\r\n\r\nSelect your spec:', 'Here you can select a character template which will gear up, gem up, set talent specialization, and set glyphs for your character instantly.\r\n\r\nSelect your spec:');
+(@NpcEntry, 'Here you can select a character template which will provide gear, gems, talent points, and glyphs for your character instantly.\r\n\r\nSelect your spec:', 'Here you can select a character template which will provide gear, gems, talent points, and glyphs for your character instantly.\r\n\r\nSelect your spec:');
 
 -- creatture_template_movement
 DELETE FROM `creature_template_movement` WHERE `CreatureId` IN (@NpcEntry);

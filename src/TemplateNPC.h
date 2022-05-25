@@ -16,6 +16,7 @@
 #include "ObjectMgr.h"
 
 #define SPELL_Amani_War_Bear 43688
+#define SPELL_X53_Touring_Rocket 75973
 #define SPELL_Artisan_Riding 34091
 #define SPELL_Cold_Weather_Flying 54197
 #define SPELL_Teach_Learn_Talent_Specialization_Switches 63680
