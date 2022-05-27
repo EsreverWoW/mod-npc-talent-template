@@ -255,7 +255,7 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(44457); // living bomb
                     player->learnSpellHighRank(54646); // focus magic
                 }
-                if ((*itr)->playerSpec == "Frost")
+                /*if ((*itr)->playerSpec == "Frost")
                 {
                     player->learnSpellHighRank(12472); // icy veins
                     player->learnSpellHighRank(11958); // cold snap
@@ -263,7 +263,7 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(31687); // summon water elemental
                     player->learnSpellHighRank(44572); // deep freeze
                     player->learnSpellHighRank(54646); // focus magic
-                }
+                }*/
                 if ((*itr)->playerSpec == "Arcane")
                 {
                     player->learnSpellHighRank(12043); // presence of mind
@@ -846,7 +846,7 @@ public:
         case CLASS_MAGE:
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_holy_magicalsentry:30|t|r Use Arcane Spec", GOSSIP_SENDER_MAIN, 9);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_fire_flamebolt:30|t|r Use Fire Spec", GOSSIP_SENDER_MAIN, 10);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_frost_frostbolt02:30|t|r Use Frost Spec", GOSSIP_SENDER_MAIN, 11);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_frost_frostbolt02:30|t|r Use Frost Spec", GOSSIP_SENDER_MAIN, 11);*/
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_holy_magicalsentry:30|t|r Use Arcane Spec (Talents Only)", GOSSIP_SENDER_MAIN, 109);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_fire_flamebolt:30|t|r Use Fire Spec (Talents Only)", GOSSIP_SENDER_MAIN, 110);
@@ -1116,8 +1116,8 @@ public:
             break;
 
         case 11: // Use Frost Mage Spec
-            sTemplateNpcMgr->sTalentsSpec = "Frost";
-            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Frost";
+            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
@@ -1339,8 +1339,8 @@ public:
             break;
 
         case 111:
-            sTemplateNpcMgr->sTalentsSpec = "Frost";
-            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Frost";
+            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
