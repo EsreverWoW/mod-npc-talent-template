@@ -126,13 +126,13 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                 }
                 break;
             case CLASS_HUNTER:
-                if ((*itr)->playerSpec == "Beastmastery")
+                /*if ((*itr)->playerSpec == "Beastmastery")
                 {
                     player->learnSpellHighRank(19577); // intimidation
                     player->learnSpellHighRank(19574); // bestial wrath
                     player->learnSpellHighRank(19434); // aimed shot
                     player->learnSpellHighRank(23989); // readiness
-                }
+                }*/
                 if ((*itr)->playerSpec == "Marksmanship")
                 {
                     player->learnSpellHighRank(19434); // aimed shot
@@ -889,11 +889,11 @@ public:
             break;
         case CLASS_HUNTER:
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_marksmanship:30|t|r Use Marksmanship Spec", GOSSIP_SENDER_MAIN, 21);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_hunter_beasttaming:30|t|r Use Beastmastery Spec", GOSSIP_SENDER_MAIN, 22);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_hunter_beasttaming:30|t|r Use Beastmastery Spec", GOSSIP_SENDER_MAIN, 22);*/
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_Hunter_swiftstrike:30|t|r Use Survival Spec", GOSSIP_SENDER_MAIN, 23);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_marksmanship:30|t|r Use Marksmanship Spec (Talents Only)", GOSSIP_SENDER_MAIN, 121);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_hunter_beasttaming:30|t|r Use Beastmastery Spec (Talents Only)", GOSSIP_SENDER_MAIN, 122);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_hunter_beasttaming:30|t|r Use */ Spec (Talents Only)", GOSSIP_SENDER_MAIN, 122);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\ability_Hunter_swiftstrike:30|t|r Use Survival Spec (Talents Only)", GOSSIP_SENDER_MAIN, 123);
             /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\Trade_Engineering:30|t|r Reset Talents", GOSSIP_SENDER_MAIN, 31);*/
@@ -1182,8 +1182,8 @@ public:
             break;
 
         case 22: // Use Beastmastery Hunter Spec
-            sTemplateNpcMgr->sTalentsSpec = "Beastmastery";
-            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Beastmastery";
+            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
@@ -1409,8 +1409,8 @@ public:
             break;
 
         case 122:
-            sTemplateNpcMgr->sTalentsSpec = "Beastmastery";
-            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Beastmastery";
+            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
