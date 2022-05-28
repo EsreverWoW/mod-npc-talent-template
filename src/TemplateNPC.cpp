@@ -282,7 +282,7 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(18708); // fel domination
                     player->learnSpellHighRank(19028); // soul link
                 }
-                if ((*itr)->playerSpec == "Destruction")
+                /*if ((*itr)->playerSpec == "Destruction")
                 {
                     player->learnSpellHighRank(17877); // shadowburn
                     player->learnSpellHighRank(17962); // conflagrate
@@ -290,7 +290,7 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(50796); // chaos bolt
                     player->learnSpellHighRank(18708); // fel domination
                     player->learnSpellHighRank(19028); // soul link
-                }
+                }*/
                 break;
             case CLASS_DRUID:
                 if ((*itr)->playerSpec == "Restoration")
@@ -857,11 +857,11 @@ public:
         case CLASS_WARLOCK:
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_deathcoil:30|t|r Use Affliction Spec", GOSSIP_SENDER_MAIN, 12);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_metamorphosis:30|t|r Use Demonology Spec", GOSSIP_SENDER_MAIN, 13);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_rainoffire:30|t|r Use Destruction Spec", GOSSIP_SENDER_MAIN, 14);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_rainoffire:30|t|r Use Destruction Spec", GOSSIP_SENDER_MAIN, 14);*/
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_deathcoil:30|t|r Use Affliction Spec (Talents Only)", GOSSIP_SENDER_MAIN, 112);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_metamorphosis:30|t|r Use Demonology Spec (Talents Only)", GOSSIP_SENDER_MAIN, 113);
-            AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_rainoffire:30|t|r Use Destruction Spec (Talents Only)", GOSSIP_SENDER_MAIN, 114);
+            /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\spell_shadow_rainoffire:30|t|r Use Destruction Spec (Talents Only)", GOSSIP_SENDER_MAIN, 114);*/
             /*AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "--------------------------------", GOSSIP_SENDER_MAIN, 5000);
             AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "|cff00ff00|TInterface\\icons\\Trade_Engineering:30|t|r Reset Talents", GOSSIP_SENDER_MAIN, 31);*/
             break;
@@ -1134,8 +1134,8 @@ public:
             break;
 
         case 14: // Use Destruction Warlock Spec
-            sTemplateNpcMgr->sTalentsSpec = "Destruction";
-            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Destruction";
+            EquipFullTemplateGear(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
@@ -1358,8 +1358,8 @@ public:
             break;
 
         case 114:
-            sTemplateNpcMgr->sTalentsSpec = "Destruction";
-            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);
+            /*sTemplateNpcMgr->sTalentsSpec = "Destruction";
+            LearnOnlyTalentsAndGlyphs(player, sTemplateNpcMgr->sTalentsSpec);*/
             CloseGossipMenuFor(player);
             break;
 
