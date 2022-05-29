@@ -25,7 +25,9 @@
 enum templateSpells
 {
     PLATE_MAIL = 750,
-    MAIL = 8737
+    MAIL = 8737,
+    PARRY = 3127,
+    DUAL_WIELD = 674
 };
 
 enum WeaponProficiencies

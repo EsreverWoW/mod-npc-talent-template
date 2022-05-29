@@ -29,6 +29,38 @@ void sTemplateNPC::LearnPlateMailSpells(Player *player)
     }
 }
 
+void sTemplateNPC::LearnParrySpell(Player *player)
+{
+    switch (player->getClass())
+    {
+    case CLASS_DEATH_KNIGHT:
+    case CLASS_HUNTER:
+    case CLASS_PALADIN:
+    case CLASS_ROGUE:
+    case CLASS_WARRIOR:
+        player->learnSpell(PARRY);
+        break;
+    default:
+        break;
+    }
+}
+
+void sTemplateNPC::LearnDualWieldSpell(Player *player)
+{
+    switch (player->getClass())
+    {
+    case CLASS_DEATH_KNIGHT:
+    case CLASS_HUNTER:
+    case CLASS_ROGUE:
+    case CLASS_SHAMAN:
+    case CLASS_WARRIOR:
+        player->learnSpell(DUAL_WIELD);
+        break;
+    default:
+        break;
+    }
+}
+
 void sTemplateNPC::ApplyBonus(Player *player, Item *item, EnchantmentSlot slot, uint32 bonusEntry)
 {
     if (!item)
@@ -964,6 +996,8 @@ public:
         sTemplateNpcMgr->LearnTemplateGlyphs(player);
         sTemplateNpcMgr->EquipTemplateGear(player);
         sTemplateNpcMgr->LearnPlateMailSpells(player);
+        sTemplateNpcMgr->LearnParrySpell(player);
+        sTemplateNpcMgr->LearnDualWieldSpell(player);
 
         // update warr talent
         player->UpdateTitansGrip();
@@ -1016,6 +1050,8 @@ public:
         sTemplateNpcMgr->LearnTemplateGlyphs(player);
         // sTemplateNpcMgr->EquipTemplateGear(player);
         sTemplateNpcMgr->LearnPlateMailSpells(player);
+        sTemplateNpcMgr->LearnParrySpell(player);
+        sTemplateNpcMgr->LearnDualWieldSpell(player);
 
         LearnWeaponSkills(player);
 
