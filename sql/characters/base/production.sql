@@ -214,7 +214,7 @@ INSERT INTO `template_npc_alliance` (`playerClass`, `playerSpec`, `pos`, `itemEn
     ('Mage', 'Arcane', 6, 34181, 3719, 3488, 3488, 3488, 2889, 0),
     ('Mage', 'Arcane', 7, 44202, 3232, 3507, 0, 0, 2869, 0),
     ('Mage', 'Arcane', 8, 37361, 2332, 0, 0, 0, 0, 0),
-    ('Mage', 'Arcane', 9, 39495, 3246, 3448, 0, 0, 2869, 0),
+    ('Mage', 'Arcane', 9, 39495, 3246, 3488, 0, 0, 2869, 0),
     ('Mage', 'Arcane', 10, 44283, 0, 0, 0, 0, 0, 0),
     ('Mage', 'Arcane', 11, 37694, 0, 0, 0, 0, 0, 0),
     ('Mage', 'Arcane', 12, 40682, 0, 0, 0, 0, 0, 0),
