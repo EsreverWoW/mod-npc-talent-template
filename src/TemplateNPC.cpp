@@ -15,13 +15,13 @@ void sTemplateNPC::LearnPlateMailSpells(Player *player)
 {
     switch (player->getClass())
     {
-    case CLASS_WARRIOR:
-    case CLASS_PALADIN:
     case CLASS_DEATH_KNIGHT:
+    case CLASS_PALADIN:
+    case CLASS_WARRIOR:
         player->learnSpell(PLATE_MAIL);
         break;
-    case CLASS_SHAMAN:
     case CLASS_HUNTER:
+    case CLASS_SHAMAN:
         player->learnSpell(MAIL);
         break;
     default:
@@ -83,21 +83,103 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
         {
             switch (player->getClass())
             {
-            case CLASS_WARRIOR:
-                if ((*itr)->playerSpec == "Arms")
+            case CLASS_DEATH_KNIGHT:
+                if ((*itr)->playerSpec == "Blood")
                 {
-                    player->learnSpellHighRank(12328); // sweeping strikes
-                    player->learnSpellHighRank(12294); // mortal strike
-                    player->learnSpellHighRank(46924); // bladestorm
-                    player->learnSpellHighRank(12323); // piercing howl
+                    player->learnSpellHighRank(48982); // rune tap
+                    player->learnSpellHighRank(49016); // hysteria
+                    player->learnSpellHighRank(55233); // vampiric blood
+                    player->learnSpellHighRank(55050); // hearth strike
+                    player->learnSpellHighRank(49028); // dancing rune weapon
+                    player->learnSpellHighRank(49039); // lichborne
                 }
-                if ((*itr)->playerSpec == "Protection")
+                if ((*itr)->playerSpec == "Frost")
                 {
-                    player->learnSpellHighRank(20243); // devastate
-                    player->learnSpellHighRank(46968); // shockwave
-                    player->learnSpellHighRank(12809); // concussion blow
-                    player->learnSpellHighRank(12975); // last stand
+                    player->learnSpellHighRank(49039); // lichborne
+                    player->learnSpellHighRank(49796); // deathchill
+                    player->learnSpellHighRank(49203); // hungering cold
+                    player->learnSpellHighRank(51271); // unbreakable armor
+                    player->learnSpellHighRank(49143); // frost strike
                 }
+                if ((*itr)->playerSpec == "Unholy")
+                {
+                    player->learnSpellHighRank(49158); // corpse explosion
+                    player->learnSpellHighRank(51052); // anti-magic zone
+                    player->learnSpellHighRank(49222); // bone shield
+                    player->learnSpellHighRank(49206); // summon gargoyle
+                    player->learnSpellHighRank(49039); // lichborne
+                    player->learnSpellHighRank(55090); // scourge strike
+                }
+                break;
+            case CLASS_DRUID:
+                if ((*itr)->playerSpec == "Balance")
+                {
+                    player->learnSpellHighRank(33831); // force of nature
+                    player->learnSpellHighRank(50516); // typhoon
+                    player->learnSpellHighRank(48505); // starfall
+                    player->learnSpellHighRank(24858); // moonkin form
+                    player->learnSpellHighRank(5570);  // insect swarm
+                }
+                if ((*itr)->playerSpec == "Feral")
+                {
+                    player->learnSpellHighRank(61336); // survival instincts
+                    player->learnSpellHighRank(49377); // feral charge
+                    player->learnSpellHighRank(33876); // mangle cat
+                    player->learnSpellHighRank(33878); // mangle bear
+                    player->learnSpellHighRank(50334); // berserk
+                }
+                if ((*itr)->playerSpec == "Restoration")
+                {
+                    player->learnSpellHighRank(17116); // nature's swiftness
+                    player->learnSpellHighRank(18562); // swiftmend
+                    player->learnSpellHighRank(48438); // wild growth
+                }
+                break;
+            case CLASS_HUNTER:
+                /*if ((*itr)->playerSpec == "Beastmastery")
+                {
+                    player->learnSpellHighRank(19577); // intimidation
+                    player->learnSpellHighRank(19574); // bestial wrath
+                    player->learnSpellHighRank(19434); // aimed shot
+                    player->learnSpellHighRank(23989); // readiness
+                }*/
+                if ((*itr)->playerSpec == "Marksmanship")
+                {
+                    player->learnSpellHighRank(19434); // aimed shot
+                    player->learnSpellHighRank(23989); // readiness
+                    player->learnSpellHighRank(19506); // trueshot aura
+                    player->learnSpellHighRank(34490); // silencing shot
+                    player->learnSpellHighRank(53209); // chimera shot
+                    player->learnSpellHighRank(19503); // scatter shot
+                }
+                break;
+            case CLASS_MAGE:
+                if ((*itr)->playerSpec == "Arcane")
+                {
+                    player->learnSpellHighRank(12043); // presence of mind
+                    player->learnSpellHighRank(12042); // arcane power
+                    player->learnSpellHighRank(31589); // slow
+                    player->learnSpellHighRank(44425); // arcane barrage
+                    player->learnSpellHighRank(12472); // icy veins
+                }
+                if ((*itr)->playerSpec == "Fire")
+                {
+                    player->learnSpellHighRank(11366); // pyroblast
+                    player->learnSpellHighRank(11113); // blast wave
+                    player->learnSpellHighRank(11129); // combustion
+                    player->learnSpellHighRank(31661); // dragon's breath
+                    player->learnSpellHighRank(44457); // living bomb
+                    player->learnSpellHighRank(54646); // focus magic
+                }
+                /*if ((*itr)->playerSpec == "Frost")
+                {
+                    player->learnSpellHighRank(12472); // icy veins
+                    player->learnSpellHighRank(11958); // cold snap
+                    player->learnSpellHighRank(11426); // ice barrier
+                    player->learnSpellHighRank(31687); // summon water elemental
+                    player->learnSpellHighRank(44572); // deep freeze
+                    player->learnSpellHighRank(54646); // focus magic
+                }*/
                 break;
             case CLASS_PALADIN:
                 if ((*itr)->playerSpec == "Holy")
@@ -123,45 +205,6 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(35395); // crusader strike
                     player->learnSpellHighRank(64205); // divine sacrifice
                     player->learnSpellHighRank(53385); // divine storm
-                }
-                break;
-            case CLASS_HUNTER:
-                /*if ((*itr)->playerSpec == "Beastmastery")
-                {
-                    player->learnSpellHighRank(19577); // intimidation
-                    player->learnSpellHighRank(19574); // bestial wrath
-                    player->learnSpellHighRank(19434); // aimed shot
-                    player->learnSpellHighRank(23989); // readiness
-                }*/
-                if ((*itr)->playerSpec == "Marksmanship")
-                {
-                    player->learnSpellHighRank(19434); // aimed shot
-                    player->learnSpellHighRank(23989); // readiness
-                    player->learnSpellHighRank(19506); // trueshot aura
-                    player->learnSpellHighRank(34490); // silencing shot
-                    player->learnSpellHighRank(53209); // chimera shot
-                    player->learnSpellHighRank(19503); // scatter shot
-                }
-                break;
-            case CLASS_ROGUE:
-                /*if ((*itr)->playerSpec == "Subtlety")
-                {
-                    player->learnSpellHighRank(16511); // hemorrhage
-                    player->learnSpellHighRank(14185); // preparation
-                    player->learnSpellHighRank(14183); // premeditation
-                    player->learnSpellHighRank(36554); // shadowstep
-                    player->learnSpellHighRank(51713); // shadow dance
-                }*/
-                if ((*itr)->playerSpec == "Combat")
-                {
-                    player->learnSpellHighRank(13750); // adrenaline rush
-                    player->learnSpellHighRank(51690); // killing spree
-                }
-                if ((*itr)->playerSpec == "Assassination")
-                {
-                    player->learnSpellHighRank(14177); // cold blood
-                    player->learnSpellHighRank(1329);  // mutilate
-                    player->learnSpellHighRank(14185); // preparation
                 }
                 break;
             case CLASS_PRIEST:
@@ -193,35 +236,34 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(14751); // inner focus
                 }
                 break;
-            case CLASS_DEATH_KNIGHT:
-                if ((*itr)->playerSpec == "Unholy")
+            case CLASS_ROGUE:
+                if ((*itr)->playerSpec == "Assassination")
                 {
-                    player->learnSpellHighRank(49158); // corpse explosion
-                    player->learnSpellHighRank(51052); // anti-magic zone
-                    player->learnSpellHighRank(49222); // bone shield
-                    player->learnSpellHighRank(49206); // summon gargoyle
-                    player->learnSpellHighRank(49039); // lichborne
-                    player->learnSpellHighRank(55090); // scourge strike
+                    player->learnSpellHighRank(14177); // cold blood
+                    player->learnSpellHighRank(1329);  // mutilate
+                    player->learnSpellHighRank(14185); // preparation
                 }
-                if ((*itr)->playerSpec == "Frost")
+                /*if ((*itr)->playerSpec == "Subtlety")
                 {
-                    player->learnSpellHighRank(49039); // lichborne
-                    player->learnSpellHighRank(49796); // deathchill
-                    player->learnSpellHighRank(49203); // hungering cold
-                    player->learnSpellHighRank(51271); // unbreakable armor
-                    player->learnSpellHighRank(49143); // frost strike
-                }
-                if ((*itr)->playerSpec == "Blood")
+                    player->learnSpellHighRank(16511); // hemorrhage
+                    player->learnSpellHighRank(14185); // preparation
+                    player->learnSpellHighRank(14183); // premeditation
+                    player->learnSpellHighRank(36554); // shadowstep
+                    player->learnSpellHighRank(51713); // shadow dance
+                }*/
+                if ((*itr)->playerSpec == "Combat")
                 {
-                    player->learnSpellHighRank(48982); // rune tap
-                    player->learnSpellHighRank(49016); // hysteria
-                    player->learnSpellHighRank(55233); // vampiric blood
-                    player->learnSpellHighRank(55050); // hearth strike
-                    player->learnSpellHighRank(49028); // dancing rune weapon
-                    player->learnSpellHighRank(49039); // lichborne
+                    player->learnSpellHighRank(13750); // adrenaline rush
+                    player->learnSpellHighRank(51690); // killing spree
                 }
                 break;
             case CLASS_SHAMAN:
+                if ((*itr)->playerSpec == "Elemental")
+                {
+                    player->learnSpellHighRank(16166); // elemental mastery
+                    player->learnSpellHighRank(51490); // thunderstorm
+                    player->learnSpellHighRank(30706); // totem of wrath
+                }
                 if ((*itr)->playerSpec == "Enhancement")
                 {
                     player->learnSpellHighRank(17364); // stormstrike
@@ -237,40 +279,6 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(974);   // earth shield
                     player->learnSpellHighRank(61295); // riptide
                     player->learnSpellHighRank(55198); // tidal force
-                }
-                if ((*itr)->playerSpec == "Elemental")
-                {
-                    player->learnSpellHighRank(16166); // elemental mastery
-                    player->learnSpellHighRank(51490); // thunderstorm
-                    player->learnSpellHighRank(30706); // totem of wrath
-                }
-                break;
-            case CLASS_MAGE:
-                if ((*itr)->playerSpec == "Fire")
-                {
-                    player->learnSpellHighRank(11366); // pyroblast
-                    player->learnSpellHighRank(11113); // blast wave
-                    player->learnSpellHighRank(11129); // combustion
-                    player->learnSpellHighRank(31661); // dragon's breath
-                    player->learnSpellHighRank(44457); // living bomb
-                    player->learnSpellHighRank(54646); // focus magic
-                }
-                /*if ((*itr)->playerSpec == "Frost")
-                {
-                    player->learnSpellHighRank(12472); // icy veins
-                    player->learnSpellHighRank(11958); // cold snap
-                    player->learnSpellHighRank(11426); // ice barrier
-                    player->learnSpellHighRank(31687); // summon water elemental
-                    player->learnSpellHighRank(44572); // deep freeze
-                    player->learnSpellHighRank(54646); // focus magic
-                }*/
-                if ((*itr)->playerSpec == "Arcane")
-                {
-                    player->learnSpellHighRank(12043); // presence of mind
-                    player->learnSpellHighRank(12042); // arcane power
-                    player->learnSpellHighRank(31589); // slow
-                    player->learnSpellHighRank(44425); // arcane barrage
-                    player->learnSpellHighRank(12472); // icy veins
                 }
                 break;
             case CLASS_WARLOCK:
@@ -292,28 +300,20 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                     player->learnSpellHighRank(19028); // soul link
                 }*/
                 break;
-            case CLASS_DRUID:
-                if ((*itr)->playerSpec == "Restoration")
+            case CLASS_WARRIOR:
+                if ((*itr)->playerSpec == "Arms")
                 {
-                    player->learnSpellHighRank(17116); // nature's swiftness
-                    player->learnSpellHighRank(18562); // swiftmend
-                    player->learnSpellHighRank(48438); // wild growth
+                    player->learnSpellHighRank(12328); // sweeping strikes
+                    player->learnSpellHighRank(12294); // mortal strike
+                    player->learnSpellHighRank(46924); // bladestorm
+                    player->learnSpellHighRank(12323); // piercing howl
                 }
-                if ((*itr)->playerSpec == "Feral")
+                if ((*itr)->playerSpec == "Protection")
                 {
-                    player->learnSpellHighRank(61336); // survival instincts
-                    player->learnSpellHighRank(49377); // feral charge
-                    player->learnSpellHighRank(33876); // mangle cat
-                    player->learnSpellHighRank(33878); // mangle bear
-                    player->learnSpellHighRank(50334); // berserk
-                }
-                if ((*itr)->playerSpec == "Balance")
-                {
-                    player->learnSpellHighRank(33831); // force of nature
-                    player->learnSpellHighRank(50516); // typhoon
-                    player->learnSpellHighRank(48505); // starfall
-                    player->learnSpellHighRank(24858); // moonkin form
-                    player->learnSpellHighRank(5570);  // insect swarm
+                    player->learnSpellHighRank(20243); // devastate
+                    player->learnSpellHighRank(46968); // shockwave
+                    player->learnSpellHighRank(12809); // concussion blow
+                    player->learnSpellHighRank(12975); // last stand
                 }
                 break;
             }
@@ -592,23 +592,8 @@ std::string sTemplateNPC::GetClassString(Player *player)
 {
     switch (player->getClass())
     {
-    case CLASS_PRIEST:
-        return "Priest";
-        break;
-    case CLASS_PALADIN:
-        return "Paladin";
-        break;
-    case CLASS_WARRIOR:
-        return "Warrior";
-        break;
-    case CLASS_MAGE:
-        return "Mage";
-        break;
-    case CLASS_WARLOCK:
-        return "Warlock";
-        break;
-    case CLASS_SHAMAN:
-        return "Shaman";
+    case CLASS_DEATH_KNIGHT:
+        return "DeathKnight";
         break;
     case CLASS_DRUID:
         return "Druid";
@@ -616,11 +601,26 @@ std::string sTemplateNPC::GetClassString(Player *player)
     case CLASS_HUNTER:
         return "Hunter";
         break;
+    case CLASS_MAGE:
+        return "Mage";
+        break;
+    case CLASS_PALADIN:
+        return "Paladin";
+        break;
+    case CLASS_PRIEST:
+        return "Priest";
+        break;
     case CLASS_ROGUE:
         return "Rogue";
         break;
-    case CLASS_DEATH_KNIGHT:
-        return "DeathKnight";
+    case CLASS_SHAMAN:
+        return "Shaman";
+        break;
+    case CLASS_WARLOCK:
+        return "Warlock";
+        break;
+    case CLASS_WARRIOR:
+        return "Warrior";
         break;
     default:
         break;
@@ -698,7 +698,7 @@ void sTemplateNPC::ExtractTalentTemplateToDB(Player *player, std::string &player
     }
     else if (player->GetFreeTalentPoints() > 0)
     {
-        player->GetSession()->SendAreaTriggerMessage("You have unspend talent points. Please spend all your talent points and re-extract the template.");
+        player->GetSession()->SendAreaTriggerMessage("You have unspent talent points. Please spend all your talent points and re-extract the template.");
         return;
     }
     else
