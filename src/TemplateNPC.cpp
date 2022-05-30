@@ -52,7 +52,6 @@ void sTemplateNPC::LearnDualWieldSpell(Player *player)
     case CLASS_DEATH_KNIGHT:
     case CLASS_HUNTER:
     case CLASS_ROGUE:
-    case CLASS_SHAMAN:
     case CLASS_WARRIOR:
         player->learnSpell(DUAL_WIELD);
         break;
