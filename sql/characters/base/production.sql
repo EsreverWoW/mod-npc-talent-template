@@ -2273,7 +2273,7 @@ INSERT INTO `template_npc_glyphs` (`playerClass`, `playerSpec`, `slot`, `glyph`)
     ('Mage', 'Arcane', 5, 312),
     ('Mage', 'Fire', 0, 591),
     ('Mage', 'Fire', 1, 451),
-    ('Mage', 'Fire', 2, 445,
+    ('Mage', 'Fire', 2, 445),
     ('Mage', 'Fire', 3, 328),
     ('Mage', 'Fire', 4, 611),
     ('Mage', 'Fire', 5, 697),
