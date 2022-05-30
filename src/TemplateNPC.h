@@ -272,6 +272,8 @@ public:
     void LearnParrySpell(Player* /*player*/);
     void LearnDualWieldSpell(Player* /*player*/);
 
+    void GrantReputation(Player* /*player*/);
+
     GlyphContainer m_GlyphContainer;
     TalentContainer m_TalentContainer;
 

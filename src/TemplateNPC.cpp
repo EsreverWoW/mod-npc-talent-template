@@ -60,6 +60,36 @@ void sTemplateNPC::LearnDualWieldSpell(Player *player)
     }
 }
 
+void sTemplateNPC::GrantReputation(Player *player)
+{
+    player->SetReputation(1106, 999999);	// Argent Crusade
+    player->SetReputation(1090, 999999);	// Kirin Tor
+    player->SetReputation(1098, 999999);	// Knights of the Ebon Blade
+    player->SetReputation(1156, 999999);	// The Ashen Verdict
+    player->SetReputation(1073, 999999);	// The Kalu'ak
+    player->SetReputation(1119, 999999);	// The Sons of Hodir
+    player->SetReputation(1091, 999999);	// The Wyrmrest Accord
+
+    switch (player->GetTeamId())
+    {
+    case TEAM_ALLIANCE:
+        player->SetReputation(1068, 999999);	// Explorers' League
+        player->SetReputation(1094, 999999);	// The Silver Covenant
+        player->SetReputation(1050, 999999);	// Valiance Expedition
+        player->SetReputation(1037, 999999);	// Alliance Vanguard
+        break;
+    case TEAM_HORDE:
+        player->SetReputation(1067, 999999);	// The Hand of Vengeance
+        player->SetReputation(1124, 999999);	// The Sunreavers
+        player->SetReputation(1064, 999999);	// The Taunka
+        player->SetReputation(1085, 999999);	// Warsong Offensive
+        player->SetReputation(1052, 999999);	// Horde Expedition
+        break;
+    default:
+        break;
+    }
+}
+
 void sTemplateNPC::ApplyBonus(Player *player, Item *item, EnchantmentSlot slot, uint32 bonusEntry)
 {
     if (!item)
@@ -997,6 +1027,7 @@ public:
         sTemplateNpcMgr->LearnPlateMailSpells(player);
         sTemplateNpcMgr->LearnParrySpell(player);
         sTemplateNpcMgr->LearnDualWieldSpell(player);
+        sTemplateNpcMgr->GrantReputation(player);
 
         // update warr talent
         player->UpdateTitansGrip();
@@ -1051,6 +1082,7 @@ public:
         sTemplateNpcMgr->LearnPlateMailSpells(player);
         sTemplateNpcMgr->LearnParrySpell(player);
         sTemplateNpcMgr->LearnDualWieldSpell(player);
+        sTemplateNpcMgr->GrantReputation(player);
 
         LearnWeaponSkills(player);
 
