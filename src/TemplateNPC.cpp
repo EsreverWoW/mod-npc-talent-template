@@ -60,6 +60,71 @@ void sTemplateNPC::LearnDualWieldSpell(Player *player)
     }
 }
 
+void sTemplateNPC::HandleClassSpells(Player *player)
+{
+    switch (player->getClass())
+    {
+    case CLASS_DRUID:
+        player->learnSpell(1066);   // Aquatic Form
+        player->learnSpell(5487);   // Bear Form
+        player->learnSpell(8946);   // Cure Poison
+        player->learnSpell(6795);   // Growl
+        player->learnSpell(6807);   // Maul
+        player->learnSpell(40120);  // Swift Flight Form
+    case CLASS_HUNTER:
+        player->learnSpell(883);    // Call Pet
+        player->learnSpell(2641);   // Dismiss Pet
+        player->learnSpell(6991);   // Feed Pet
+        player->learnSpell(982);    // Revive Pet
+        player->learnSpell(1515);   // Tame Beast
+        break;
+    case CLASS_MAGE:
+        player->learnSpell(28272);  // Polymorph
+        player->learnSpell(53140);  // Teleport: Dalaran
+    case CLASS_PALADIN:
+        player->learnSpell(7328);   // Redemption
+        player->learnSpell(5502);   // Sense Undead
+        switch (player->GetTeamId())
+        {
+        case TEAM_ALLIANCE:
+            player->learnSpell(13819);  // Warhorse
+            player->learnSpell(23214);  // Charger
+            break;
+        case TEAM_HORDE:
+            player->learnSpell(34769);  // Summon Warhorse
+            player->learnSpell(34767);  // Summon Charger
+            break;
+        default:
+            break;
+        }
+    case CLASS_ROGUE:
+        player->learnSpell(2842);   // Poisons
+    case CLASS_SHAMAN:
+        player->learnSpell(5394);   // Healing Stream Totem
+        player->learnSpell(3599);   // Searing Totem
+        player->learnSpell(8071);   // Stoneskin Totem
+
+        player->AddItem(46978, true);   //Totem of the Earthen Ring
+    case CLASS_WARLOCK:
+        player->learnSpell(5784);   // Felsteed
+        player->learnSpell(1122);   // Inferno
+        player->learnSpell(18540);  // Ritual of Doom
+        player->learnSpell(23161);  // Summon Dreadsteed
+        player->learnSpell(691);    // Summon Felhunter
+        player->learnSpell(712);    // Summon Succubus
+        player->learnSpell(688);    // Summon Imp
+        player->learnSpell(697);    // Summon Voidwalker
+    case CLASS_WARRIOR:
+        player->learnSpell(2458);   // Berserker Stance
+        player->learnSpell(71);     // Defensive Stance
+        player->learnSpell(20252);  // Intercept
+        player->learnSpell(7386);   // Sunder Armor
+        player->learnSpell(355);    // Taunt
+    default:
+        break;
+    }
+}
+
 void sTemplateNPC::GrantReputation(Player *player)
 {
     player->SetReputation(1106, 999999);	// Argent Crusade
@@ -1028,6 +1093,7 @@ public:
         sTemplateNpcMgr->LearnParrySpell(player);
         sTemplateNpcMgr->LearnDualWieldSpell(player);
         sTemplateNpcMgr->GrantReputation(player);
+        sTemplateNpcMgr->HandleClassSpells(player);
 
         // update warr talent
         player->UpdateTitansGrip();
@@ -1083,6 +1149,7 @@ public:
         sTemplateNpcMgr->LearnParrySpell(player);
         sTemplateNpcMgr->LearnDualWieldSpell(player);
         sTemplateNpcMgr->GrantReputation(player);
+        sTemplateNpcMgr->HandleClassSpells(player);
 
         LearnWeaponSkills(player);
 

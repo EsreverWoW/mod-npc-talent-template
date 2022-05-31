@@ -271,6 +271,7 @@ public:
     void LearnPlateMailSpells(Player* /*player*/);
     void LearnParrySpell(Player* /*player*/);
     void LearnDualWieldSpell(Player* /*player*/);
+    void HandleClassSpells(Player* /*player*/);
 
     void GrantReputation(Player* /*player*/);
 
