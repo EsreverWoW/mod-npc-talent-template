@@ -768,19 +768,19 @@ bool sTemplateNPC::OverwriteTemplate(Player *player, std::string &playerSpecStr)
     if (player->getRace() == RACE_HUMAN)
     {
         CharacterDatabase.Execute("DELETE FROM template_npc_human WHERE playerClass = '{}' AND playerSpec = '{}';", GetClassString(player).c_str(), playerSpecStr.c_str());
-        player->GetSession()->SendAreaTriggerMessage("Template successfuly created!");
+        player->GetSession()->SendAreaTriggerMessage("Template successfully created!");
         return false;
     }
     else if (player->GetTeamId() == TEAM_ALLIANCE && player->getRace() != RACE_HUMAN)
     {
         CharacterDatabase.Execute("DELETE FROM template_npc_alliance WHERE playerClass = '{}' AND playerSpec = '{}';", GetClassString(player).c_str(), playerSpecStr.c_str());
-        player->GetSession()->SendAreaTriggerMessage("Template successfuly created!");
+        player->GetSession()->SendAreaTriggerMessage("Template successfully created!");
         return false;
     }
     else if (player->GetTeamId() == TEAM_HORDE)
     { // ????????????? sTemplateNpcMgr here??
         CharacterDatabase.Execute("DELETE FROM template_npc_horde WHERE playerClass = '{}' AND playerSpec = '{}';", GetClassString(player).c_str(), playerSpecStr.c_str());
-        player->GetSession()->SendAreaTriggerMessage("Template successfuly created!");
+        player->GetSession()->SendAreaTriggerMessage("Template successfully created!");
         return false;
     }
     return true;
@@ -1104,7 +1104,7 @@ public:
 
         LearnWeaponSkills(player);
 
-        player->GetSession()->SendAreaTriggerMessage("Successfuly equipped {} {} template!", playerSpecStr.c_str(), sTemplateNpcMgr->GetClassString(player).c_str());
+        player->GetSession()->SendAreaTriggerMessage("successfully equipped %s %s template!", playerSpecStr.c_str(), sTemplateNpcMgr->GetClassString(player).c_str());
 
         if (player->getPowerType() == POWER_MANA)
             player->SetPower(POWER_MANA, player->GetMaxPower(POWER_MANA));
@@ -1157,7 +1157,7 @@ public:
 
         LearnWeaponSkills(player);
 
-        player->GetSession()->SendAreaTriggerMessage("Successfuly learned talent spec {}!", playerSpecStr.c_str());
+        player->GetSession()->SendAreaTriggerMessage("successfully learned talent spec {}!", playerSpecStr.c_str());
 
         // Learn Riding/Flying
         if (player->HasSpell(SPELL_Artisan_Riding) ||
