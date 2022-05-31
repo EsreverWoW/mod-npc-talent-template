@@ -71,6 +71,7 @@ void sTemplateNPC::HandleClassSpells(Player *player)
         player->learnSpell(6795);   // Growl
         player->learnSpell(6807);   // Maul
         player->learnSpell(40120);  // Swift Flight Form
+        break;
     case CLASS_HUNTER:
         player->learnSpell(883);    // Call Pet
         player->learnSpell(2641);   // Dismiss Pet
@@ -81,6 +82,7 @@ void sTemplateNPC::HandleClassSpells(Player *player)
     case CLASS_MAGE:
         player->learnSpell(28272);  // Polymorph
         player->learnSpell(53140);  // Teleport: Dalaran
+        break;
     case CLASS_PALADIN:
         player->learnSpell(7328);   // Redemption
         player->learnSpell(5502);   // Sense Undead
@@ -97,14 +99,17 @@ void sTemplateNPC::HandleClassSpells(Player *player)
         default:
             break;
         }
+        break;
     case CLASS_ROGUE:
         player->learnSpell(2842);   // Poisons
+        break;
     case CLASS_SHAMAN:
         player->learnSpell(5394);   // Healing Stream Totem
         player->learnSpell(3599);   // Searing Totem
         player->learnSpell(8071);   // Stoneskin Totem
 
         player->AddItem(46978, true);   //Totem of the Earthen Ring
+        break;
     case CLASS_WARLOCK:
         player->learnSpell(5784);   // Felsteed
         player->learnSpell(1122);   // Inferno
@@ -114,12 +119,14 @@ void sTemplateNPC::HandleClassSpells(Player *player)
         player->learnSpell(712);    // Summon Succubus
         player->learnSpell(688);    // Summon Imp
         player->learnSpell(697);    // Summon Voidwalker
+        break;
     case CLASS_WARRIOR:
         player->learnSpell(2458);   // Berserker Stance
         player->learnSpell(71);     // Defensive Stance
         player->learnSpell(20252);  // Intercept
         player->learnSpell(7386);   // Sunder Armor
         player->learnSpell(355);    // Taunt
+        break;
     default:
         break;
     }
