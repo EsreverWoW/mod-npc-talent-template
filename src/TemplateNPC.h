@@ -264,6 +264,7 @@ public:
     std::string GetClassString(Player* /*player*/);
     std::string sTalentsSpec;
 
+    void LearnTemplateTalents(Player* /*player*/);
     void LearnTemplateGlyphs(Player* /*player*/);
     void EquipTemplateGear(Player* /*player*/);
 
