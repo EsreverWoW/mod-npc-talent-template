@@ -229,6 +229,7 @@ void sTemplateNPC::LearnTemplateTalents(Player *player)
                 {
                     player->learnSpellHighRank(51271); // unbreakable armor
                     player->learnSpellHighRank(49143); // frost strike
+                    player->learnSpellHighRank(49184); // howling blast
                 }
                 if ((*itr)->playerSpec == "Unholy")
                 {
